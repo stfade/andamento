@@ -54,4 +54,4 @@ single moment.
 
 MIT - see [LICENSE](LICENSE).
 
-Andamento, v1.0.0, 2026.
+Andamento, v1.0.1, 2026.

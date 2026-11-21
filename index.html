@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0C0A08">
+<link rel="canonical" href="https://stfade.github.io/andamento/">
 <title>Andamento — a palette for tools that prove their work</title>
 <link rel="icon" href="favicon.svg">
-<meta property="og:image" content="preview.png">
+<meta property="og:image" content="https://stfade.github.io/andamento/preview.png">
+<meta property="og:url" content="https://stfade.github.io/andamento/">
+<meta property="og:type" content="website">
+<meta property="og:description" content="A nine-tessera palette: verdigris on travertine, gold only when two halves agree.">
+<meta property="og:image:alt" content="Andamento palette page">
+<meta name="twitter:title" content="Andamento — a palette for tools that prove their work">
+<meta name="twitter:description" content="Verdigris on travertine, gold only when two halves agree.">
+<meta property="og:site_name" content="Andamento">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="Andamento — a palette for tools that prove their work">
 <meta name="description" content="A nine-tessera palette: verdigris on travertine, gold only when two halves agree.">
 <style>
@@ -20,13 +32,13 @@ body{font-family:"Cascadia Mono","Cascadia Code","JetBrains Mono",Consolas,monos
   font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .page{max-width:1120px;margin:0 auto;padding:88px 56px 96px}
 .kicker{font-size:10px;letter-spacing:.22em;color:var(--verdigris-dim)}
-h1{font-size:84px;line-height:1;letter-spacing:-.04em;font-weight:400;margin-top:18px}
+h1{font-size:clamp(46px,7.2vw,84px);line-height:1;letter-spacing:-.04em;font-weight:400;margin-top:18px}
 h1 .mark{display:inline-block;width:.72em;height:.72em;border:5px solid var(--verdigris);
   position:relative;margin-right:.22em;transform:translateY(.02em)}
 h1 .mark i{position:absolute;inset:0 50% 0 0;background:var(--verdigris)}
 .lede{max-width:62ch;color:var(--dim);font-size:15px;margin-top:22px}
 .hero{border-bottom:1px solid var(--line);padding-bottom:56px}
-.match{display:flex;align-items:center;gap:18px;margin-top:34px;font-size:12px;color:var(--faint)}
+.match{display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;margin-top:34px;font-size:12px;color:var(--dim)}
 .match b{font-weight:400;color:var(--verdigris)}
 .match .gold{color:var(--gold)}
 .match .arrow{color:var(--faint)}
@@ -41,7 +53,7 @@ h2{font-size:10px;letter-spacing:.22em;color:var(--verdigris-dim);
 .principle h3{font-size:14px;font-weight:400;margin-bottom:8px}
 .principle p{font-size:12px;color:var(--dim);line-height:1.6}
 
-.palette-note{font-size:10px;letter-spacing:.16em;color:var(--faint);margin:-16px 0 22px}
+.palette-note{font-size:10px;letter-spacing:.16em;color:var(--dim);margin:-16px 0 22px}
 .palette{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .swatch{position:relative;cursor:pointer}
 .swatch:hover{border-color:var(--verdigris-dim)}
@@ -56,7 +68,7 @@ h2{font-size:10px;letter-spacing:.22em;color:var(--verdigris-dim);
 .swatch .body{padding:14px 16px 16px}
 .swatch .name{font-size:12px;letter-spacing:.02em}
 .swatch .hex{font-size:11px;color:var(--dim);margin-top:3px}
-.swatch .role{font-size:11px;color:var(--faint);margin-top:10px;line-height:1.5}
+.swatch .role{font-size:11px;color:var(--dim);margin-top:10px;line-height:1.5}
 .gold-card{grid-column:1 / -1;display:grid;grid-template-columns:210px 1fr;border-color:#5A4A2A}
 .gold-card .chip{height:auto;min-height:120px;border-bottom:0;border-right:1px solid #5A4A2A}
 .gold-card .body{padding:22px 24px}
@@ -91,9 +103,42 @@ h2{font-size:10px;letter-spacing:.22em;color:var(--verdigris-dim);
 .rule .mark{color:var(--verdigris)}
 .tokens{font-size:12px;color:var(--dim);line-height:1.9;white-space:pre-wrap;
   border-top:1px solid var(--line);padding-top:18px;margin-top:34px}
-footer{padding-top:28px;color:var(--faint);font-size:11px;display:flex;
-  justify-content:space-between}
-footer a{color:var(--faint);text-decoration:none}
+footer{padding-top:28px;color:var(--dim);font-size:11px;display:flex;
+  justify-content:space-between;gap:12px}
+footer a{color:var(--dim);text-decoration:none}
+@media (max-width: 900px) {
+  .page { padding: 64px 32px 72px; }
+  .principles { grid-template-columns: 1fr 1fr; }
+  .palette { grid-template-columns: 1fr 1fr; }
+  .typography { grid-template-columns: 1fr; gap: 28px; }
+  .rules { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .page { padding: 44px 20px 56px; }
+  h1 { font-size: 46px; }
+  h1 .mark { border-width: 3px; }
+  .kicker { font-size: 9px; }
+  .lede { font-size: 14px; margin-top: 18px; }
+  .match { margin-top: 24px; font-size: 11px; }
+  section { padding: 38px 0; }
+  h2 { margin-bottom: 22px; }
+  .principles { grid-template-columns: 1fr; gap: 22px; }
+  .principle { padding-top: 12px; }
+  .palette { grid-template-columns: 1fr; gap: 16px; }
+  .palette-note { margin: -12px 0 18px; }
+  .chip { height: 88px; }
+  .gold-card { grid-template-columns: 1fr; }
+  .gold-card .chip { min-height: 84px; border-right: 0; border-bottom: 1px solid #5A4A2A; }
+  .gold-card .body { padding: 16px; }
+  .figure { gap: 16px; padding: 22px; }
+  .half, .whole { width: 44px; height: 44px; }
+  .half { border-width: 3px; }
+  .plus, .arrow { font-size: 14px; }
+  .match-copy { font-size: 11px; }
+  .rules { gap: 12px; }
+  footer { flex-direction: column; }
+}
 </style>
 </head>
 <body>
@@ -272,7 +317,7 @@ footer a{color:var(--faint);text-decoration:none}
   })();
   </script>
   <footer>
-    <span>Andamento · v1.0.0 · 2026 · MIT</span>
+    <span>Andamento · v1.0.1 · 2026 · MIT</span>
     <span><a href="LICENSE">license</a></span>
   </footer>
 </div>
