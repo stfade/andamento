@@ -1,0 +1,24 @@
+:root {
+  --andamento-ink: #0C0A08;
+  --andamento-panel: #13100C;
+  --andamento-panel-2: #181410;
+  --andamento-line: #2A241B;
+  --andamento-text: #EDE5D6;
+  --andamento-dim: #8C8171;
+  --andamento-faint: #4E473B;
+  --andamento-verdigris: #7DB6A3;
+  --andamento-verdigris-dim: #5E8C7E;
+  --andamento-terracotta: #CC7A5A;
+  --andamento-ochre: #C9A24B;
+  --andamento-plum: #A98BC4;
+  --andamento-gold: #E4C77D;
+
+  --andamento-ground: var(--andamento-ink);
+  --andamento-surface: var(--andamento-panel);
+  --andamento-hairline: var(--andamento-line);
+  --andamento-pass: var(--andamento-verdigris);
+  --andamento-fail: var(--andamento-terracotta);
+  --andamento-judge: var(--andamento-ochre);
+  --andamento-decide: var(--andamento-plum);
+  --andamento-matched: var(--andamento-gold);
+}

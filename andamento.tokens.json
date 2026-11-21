@@ -1,0 +1,131 @@
+{
+  "name": "Andamento",
+  "version": "0.1.0",
+  "description": "A nine-tessera palette: verdigris on travertine, gold only when two halves agree.",
+  "license": "MIT",
+  "colors": {
+    "ink": {
+      "value": "#0C0A08",
+      "rgb": [
+        12,
+        10,
+        8
+      ],
+      "role": "ground"
+    },
+    "panel": {
+      "value": "#13100C",
+      "rgb": [
+        19,
+        16,
+        12
+      ],
+      "role": "surfaces"
+    },
+    "panel2": {
+      "value": "#181410",
+      "rgb": [
+        24,
+        20,
+        16
+      ],
+      "role": "raised surfaces"
+    },
+    "line": {
+      "value": "#2A241B",
+      "rgb": [
+        42,
+        36,
+        27
+      ],
+      "role": "hairlines, grout"
+    },
+    "text": {
+      "value": "#EDE5D6",
+      "rgb": [
+        237,
+        229,
+        214
+      ],
+      "role": "primary text, travertine"
+    },
+    "dim": {
+      "value": "#8C8171",
+      "rgb": [
+        140,
+        129,
+        113
+      ],
+      "role": "secondary text"
+    },
+    "faint": {
+      "value": "#4E473B",
+      "rgb": [
+        78,
+        71,
+        59
+      ],
+      "role": "tertiary text"
+    },
+    "verdigris": {
+      "value": "#7DB6A3",
+      "rgb": [
+        125,
+        182,
+        163
+      ],
+      "role": "mark, selection, pass"
+    },
+    "verdigrisDim": {
+      "value": "#5E8C7E",
+      "rgb": [
+        94,
+        140,
+        126
+      ],
+      "role": "section labels"
+    },
+    "terracotta": {
+      "value": "#CC7A5A",
+      "rgb": [
+        204,
+        122,
+        90
+      ],
+      "role": "failure"
+    },
+    "ochre": {
+      "value": "#C9A24B",
+      "rgb": [
+        201,
+        162,
+        75
+      ],
+      "role": "judgement, running"
+    },
+    "plum": {
+      "value": "#A98BC4",
+      "rgb": [
+        169,
+        139,
+        196
+      ],
+      "role": "decision"
+    },
+    "goldSmalti": {
+      "value": "#E4C77D",
+      "rgb": [
+        228,
+        199,
+        125
+      ],
+      "role": "matched · reserved"
+    }
+  },
+  "rules": [
+    "one colour, one meaning",
+    "gold only when two halves agree",
+    "hairlines are grout, not decoration",
+    "no mosaic wallpaper"
+  ]
+}
