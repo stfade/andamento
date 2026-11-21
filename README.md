@@ -3,6 +3,8 @@
 A nine-tessera palette: verdigris on travertine, one colour per meaning, and gold only
 when two halves agree.
 
+**[View the palette](https://stfade.github.io/andamento/)**
+
 ![Andamento](preview.png)
 
 ## Tokens
