@@ -41,7 +41,16 @@ h2{font-size:10px;letter-spacing:.22em;color:var(--verdigris-dim);
 .principle h3{font-size:14px;font-weight:400;margin-bottom:8px}
 .principle p{font-size:12px;color:var(--dim);line-height:1.6}
 
+.palette-note{font-size:10px;letter-spacing:.16em;color:var(--faint);margin:-16px 0 22px}
 .palette{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.swatch{position:relative;cursor:pointer}
+.swatch:hover{border-color:var(--verdigris-dim)}
+.swatch:focus-visible{outline:2px solid var(--verdigris);outline-offset:2px}
+.swatch.copied::after{content:"COPIED";position:absolute;top:10px;right:10px;
+  font-size:9px;letter-spacing:.16em;color:var(--verdigris);background:var(--ink);
+  border:1px solid var(--verdigris);padding:2px 5px;pointer-events:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .swatch{border:1px solid var(--line);background:var(--panel)}
 .chip{height:104px;border-bottom:1px solid var(--line)}
 .swatch .body{padding:14px 16px 16px}
@@ -120,6 +129,7 @@ footer a{color:var(--faint);text-decoration:none}
 
   <section>
     <h2>TESSERAE · COLOUR TOKENS</h2>
+    <div class="palette-note">click a tile to copy its hex</div>
     <div class="palette">
       <div class="swatch"><div class="chip" style="background:#0C0A08"></div>
         <div class="body"><div class="name">Ink</div><div class="hex">#0C0A08 · 12 10 8</div>
@@ -207,6 +217,60 @@ footer a{color:var(--faint);text-decoration:none}
     </div>
   </section>
 
+  <div id="copy-status" class="sr-only" aria-live="polite"></div>
+  <script>
+  (() => {
+    const hexOf = (card) => {
+      const chip = card.querySelector(".chip");
+      const match = chip && (chip.getAttribute("style") || "").match(/#[0-9a-fA-F]{6}/);
+      return match ? match[0].toUpperCase() : "";
+    };
+    const copy = async (text) => {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        const field = document.createElement("textarea");
+        field.value = text;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.left = "-9999px";
+        document.body.appendChild(field);
+        field.select();
+        let ok = false;
+        try { ok = document.execCommand("copy"); } catch { ok = false; }
+        field.remove();
+        return ok;
+      }
+    };
+    document.querySelectorAll(".swatch").forEach((card) => {
+      const hex = hexOf(card);
+      if (!hex) return;
+      card.dataset.hex = hex;
+      card.tabIndex = 0;
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", "Copy " + hex);
+      const activate = async () => {
+        const ok = await copy(hex);
+        const status = document.querySelector("#copy-status");
+        if (ok) {
+          card.classList.add("copied");
+          if (status) status.textContent = hex + " copied";
+          setTimeout(() => card.classList.remove("copied"), 1100);
+        } else if (status) {
+          status.textContent = "Could not copy " + hex;
+        }
+      };
+      card.addEventListener("click", activate);
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          activate();
+        }
+      });
+    });
+  })();
+  </script>
   <footer>
     <span>Andamento · v0.1.0 · 2026 · MIT</span>
     <span><a href="LICENSE">license</a></span>

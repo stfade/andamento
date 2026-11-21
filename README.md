@@ -29,6 +29,9 @@ when two halves agree.
 
 Or take the values from `andamento.tokens.json`. No dependencies, no build.
 
+Click any tile on the [page](https://stfade.github.io/andamento/) to copy its hex
+(Enter or Space works from the keyboard).
+
 ```html
 <link rel="stylesheet" href="andamento.css">
 ```
